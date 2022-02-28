@@ -1,12 +1,18 @@
-
-import './App.css';
+import Navigation from './components/Navigation/Navigation'
+import './App.css'
+import AppRoutes from './routes/AppRoutes'
+import { MessageProviderWrapper } from './context/userMessage.context'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Tengo el control</h1>
-    </div>
-  );
-}
+    <>
+      <Navigation />
 
-export default App;
+    <MessageProviderWrapper>
+        <AppRoutes />
+    </MessageProviderWrapper>
+      
+    </>
+  )
+}
+export default App
